@@ -20,7 +20,12 @@ const rl = readline.createInterface({
 });
 
 rl.question('What is your name? ', (name) => {
-    console.log(`Thank you ${name}`);
-
-    rl.close();
+    rl.question('What is your address? ', (address) => {
+        rl.question('What is your phone number?', (number) => {
+            console.log(`Hello ${name}`);
+            console.log(`Your Address ${address}`);
+            console.log(`Your Phone number is ${number}`);
+            rl.close();
+        });
+    });
 });
